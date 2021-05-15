@@ -163,25 +163,46 @@ input[type=text],[type=password]{
  
 @media screen and (max-width: 600px) {
 
-    .container > div{
-        grid-gap: 10px;
-         margin: 10px;
-         background-color: red;
-         overflow: hidden;
-     }
+    input[type=text]{
+        margin-top:5%;
+    
+    }
+    input[type=text],[type=password]{
+        display: inline-block;
+        height:30px;
+        width:70%;
+        margin-left: 65px;
+    }
 
-     .tryitButton{
-        width: 150px;
-        height: 30px;
-        margin: 30px;
-        background-color : green;
-        font-size:15px;
-        padding: 2px;
-        z-index: 0;
-        opacity: 1;
-        border: none;
+    .loginformsubmitbt{
+        width: 70%;
+        height:30px;
+        margin-left: 65px;
+        background-color:rgb(248, 154, 120) ;
+        margin-bottom: 30px;;
     }
     
+
+    .container{
+
+        height: auto;
+        width: 100%;
+        background-color:black;
+        margin-top:1%;
+        display: grid;
+        grid-template-columns: 98%;
+        
+        
+    }
+
+
+
+    .container > div{
+        grid-gap: 1%;
+         margin: 1%;
+         background-color: rgb(178, 240, 178);
+         overflow: hidden;
+     }
     
     }
   

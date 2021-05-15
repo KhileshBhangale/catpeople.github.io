@@ -162,22 +162,37 @@ input[type=text], [type=password] {
 }
 
 @media screen and (max-width: 600px) {
-  .container > div {
-    grid-gap: 10px;
-    margin: 10px;
-    background-color: red;
-    overflow: hidden;
+  input[type=text] {
+    margin-top: 5%;
   }
-  .tryitButton {
-    width: 150px;
+  input[type=text], [type=password] {
+    display: inline-block;
     height: 30px;
-    margin: 30px;
-    background-color: green;
-    font-size: 15px;
-    padding: 2px;
-    z-index: 0;
-    opacity: 1;
-    border: none;
+    width: 70%;
+    margin-left: 65px;
+  }
+  .loginformsubmitbt {
+    width: 70%;
+    height: 30px;
+    margin-left: 65px;
+    background-color: #f89a78;
+    margin-bottom: 30px;
+  }
+  .container {
+    height: auto;
+    width: 100%;
+    background-color: black;
+    margin-top: 1%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 98%;
+        grid-template-columns: 98%;
+  }
+  .container > div {
+    grid-gap: 1%;
+    margin: 1%;
+    background-color: #b2f0b2;
+    overflow: hidden;
   }
 }
 /*# sourceMappingURL=index.css.map */
