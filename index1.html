@@ -65,25 +65,25 @@ The struggle you're in today is developing the strength you need for Tomorrow
 
 <div class="examsetbox" id="examsetbox">
 <form name="filterForm" id="filterForm" method="post" action="question_list.php" target="_blank">
-	<select id="year" name="year" class="dropdown-list">
+  <lable class="selectlable">Select Year</lable>	<select id="year" name="year" class="dropdown-list">
 
   <!--  <?php while($year = $Distinctyears->fetch_assoc()) { ?>-->
    <option value="2010" class="dropdown-items"><!--<?php echo $year['year'] ?>-->2010</option>
 	 <!-- <?php } ?>-->
 	</select>
 
-	<lable>Select Topic <select name="topic" id="topic" onchange="subTopic(this);" class="dropdown-list">
+	<lable class="selectlable">Select Topic </lable><select name="topic" id="topic" onchange="subTopic(this);" class="dropdown-list">
 	<option value="empty" class="dropdown-items">Select a Topic</option>
 	<option value="Arithmatic" class="dropdown-items"> Arithmatic</option>
 	<option value="Geometry" class="dropdown-items">Geometry</option>
 	<option value="Algebra" class="dropdown-items">Algebra</option>
 	<option value="Number System" class="dropdown-items">Number System</option>
 	<option value="Morden Math" class="dropdown-items">Morden Math</option>
-	</select></lable>
-  <lable>Select Sub-topic
+	</select>
+  <lable class="selectlable">Select Sub-topic</lable>
 	<select id="subtopic" name="subtopic" class="dropdown-list">
     <option value="0" class="dropdown-items" >Select a Sub-topic</option>
-  </select></lable>
+  </select>
   <button type="button" onclick="getTest()" class="tryitButton">Try it</button>
   
  

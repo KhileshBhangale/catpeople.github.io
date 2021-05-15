@@ -232,7 +232,7 @@ input[type=text],[type=password]{
     .examsetboxaftertryit{
 
         background-color :black;
-        height: 500px;
+        height: 600px;
         width: 100%;
         border: 1px solid white;
         margin-top:10px;
@@ -241,9 +241,9 @@ input[type=text],[type=password]{
     
 
 .tryitButton{
-    width: 150px;
-    height: 30px;
-    margin: 10px;
+    width: 60%;
+    height: 40px;
+    margin-left: 20%;
     background-color : rgb(248, 154, 120);
     font-size:15px;
     padding: 2px;
@@ -272,6 +272,18 @@ input[type=text],[type=password]{
     width: 150px;
 }
 
+.dropdown-list{
+    width: 60%;
+    height: 40px;
+    margin-left: 20%;
+    background-color: lightgreen;
+    font-size:15px;
+    padding: 2px;
+}
+
+.selectlable{
+    display: none;
+}
     }
   
   
