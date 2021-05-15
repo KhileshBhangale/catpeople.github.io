@@ -1,0 +1,202 @@
+<!--<?php include('database/indexnotification.php');?>
+<?php include('header.php'); ?> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>catpeople1</title>
+  <link rel="stylesheet" href="css/index.css">
+  <style>
+
+  #startTest{
+    display:none;
+  }
+  #downloadPDF{
+    display:none;
+  }
+  </style>
+</head>
+<body>
+<div id="container" class="container">
+  <div>
+    <div class="boxtitle">LOG-IN </div>
+    <div>
+      <form class="loginform" method="post">
+    
+     <input type="text" Placeholder="Enter Mobile Number" name="mobile_no" ><br><br>
+      
+       <input type="password" Placeholder="Enter Password" name="password" ><br><br>
+      <input type="submit" class="loginformsubmitbt">
+      </form>
+
+    </div>
+  </div>
+  <div>
+  <div class="boxtitle">Daily Test</div>
+  </div>
+  <div>
+  <div class="boxtitle">Notification</div>
+  <marquee behavior="" direction="up" height="100%" scrollamount="5"onMouseOver="this.stop()" onMouseOut="this.start()"><ul style="list-style-type:none"><!--<?php 
+  
+  
+  
+ 
+    while($note = $notifications->fetch_assoc()) {
+    
+  ?>-->
+  <li class="notification"><a href="<?php echo $note['Link']?>"><?php echo $note['Note']?></li>
+   
+<!-- <?php }?>--></ul>
+  </marquee>
+  
+  </div>
+</div>
+
+<div id="quotebox" class="quotebox">
+The struggle you're in today is developing the strength you need for Tomorrow
+</div>
+
+
+<div class="examsetbox" id="examsetbox">
+<form name="filterForm" id="filterForm" method="post" action="question_list.php" target="_blank">
+	<select id="year" name="year" class="dropdown-list">
+
+  <!--  <?php while($year = $Distinctyears->fetch_assoc()) { ?>-->
+   <option value="<!--<?php echo $year['year'] ?>-->2010" class="dropdown-items"><!--<?php echo $year['year'] ?>-->2010</option>
+	 <!-- <?php } ?>-->
+	</select>
+
+	<lable>Select Topic <select name="topic" id="topic" onchange="subTopic(this);" class="dropdown-list">
+	<option value="empty" class="dropdown-items">Select a Topic</option>
+	<option value="Arithmatic" class="dropdown-items"> Arithmatic</option>
+	<option value="Geometry" class="dropdown-items">Geometry</option>
+	<option value="Algebra" class="dropdown-items">Algebra</option>
+	<option value="Number System" class="dropdown-items">Number System</option>
+	<option value="Morden Math" class="dropdown-items">Morden Math</option>
+	</select></lable>
+  <lable>Select Sub-topic
+	<select id="subtopic" name="subtopic" class="dropdown-list">
+    <option value="0" class="dropdown-items" >Select a Sub-topic</option>
+  </select></lable>
+  <button type="button" onclick="getTest()" class="tryitButton">Try it</button>
+  
+ 
+  <div id="num"></div>
+    <input type="submit"  id="downloadPDF" value="Download PDF" class="starttestButton" style="float:right" >
+</form>
+<button  id="startTest" onclick="startTest()" class="starttestButton" style="float:left">Start Test</button>
+
+</div>
+
+
+   <p id="demo"></p> 
+	<script type="text/javascript">
+
+
+ function subTopic(selectObj) { 
+	var subTopicList = new Array(6) 
+ subTopicList["empty"] = ["Select a Sub-topic"]; 
+ subTopicList["Arithmatic"] = ["Percenteges", "Time, Speed, & Distance", "Pipe & Cisterns", "Work & Time", "Profit & Loss", "Mixtures & Allegations","Averages","Ratios & Proportion","Simple Interest & Compound Interest" ]; 
+ subTopicList["Geometry"] = ["Triangles", "Circles", "Quadrilaterals", "Mensuration", "Coordinate Geomentry", "Trignomentry"]; 
+
+ subTopicList["Algebra"] = ["Linear & Quadratic Equations", "Polynomials", "Inequalities","Progressions","Surds & Indices"]; 
+ subTopicList["Number System"]= ["Properties of numbers", "Numbers classification", "Divisibility rules", "HCF & LCM", "Factores and Multiples", "Highest power of a number","Factorials","Cyclicity","Base theorem","Remainders"
+,"Remainder theorem","Binomial theorem","Clocks and calenders"]; 
+ subTopicList["Morden Math"]= ["set Theory", "Permutation and Combination", "Probability", "Logarithms","Functions"]; 
+
+
+ var idx = selectObj.selectedIndex; 
+  
+ var which = selectObj.options[idx].value; 
+ 
+ subTopic = subTopicList[which]; 
+ 
+ var subSelect = document.getElementById("subtopic"); 
+ 
+ var len=subSelect.options.length; 
+ while (subSelect.options.length > 0) { 
+ subSelect.remove(0); 
+ } 
+ var newOption; 
+ 
+ for (var i=0; i<subTopic.length; i++) { 
+ newOption = document.createElement("option"); 
+ newOption.value = subTopic[i];  
+ newOption.text=subTopic[i]; 
+ 
+ try { 
+ subSelect.add(newOption);  
+ } 
+ catch (e) { 
+ subSelect.appendChild(newOption); 
+ } 
+ } 
+ } 
+
+	
+	</script>
+    <script>
+function getTest() {
+
+  var subtopic = document.getElementById("subtopic").value;
+  var year = document.getElementById("year").value;
+  var x;
+  var xhttp;  
+      if (subtopic == "empty"|| year=="empty" || subtopic == "0" || year=="0") {
+      alert("Please select year and sub-topic")
+      return;
+      }
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        
+       document.getElementById("num").innerHTML = this.responseText;
+       x = this.responceText;
+       document.getElementById("examsetbox").style.height = "230px";
+       
+   
+      }
+      };
+      xhttp.open("GET", "database/indexAjaxhandling.php?q="+subtopic+"&year="+year, true);
+      xhttp.send();
+
+      if(x!=""||x!="0")
+      {
+        document.getElementById("startTest").style.display="block";
+        document.getElementById("downloadPDF").style.display="block";
+      }
+}
+
+function startTest(){
+
+  var subtopic = document.getElementById("subtopic").value;
+  var year = document.getElementById("year").value;
+  var time = document.getElementById("setTime").value;
+  var xhttp;  
+      if (subtopic == "") {
+      document.getElementById("num").innerHTML = "";
+      return;
+      }
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        
+        
+        location. href = "practicetest.php"
+      }
+      };
+      xhttp.open("GET", "database/indexcreatetest.php?q="+subtopic+"&year="+year+"&time="+time, true);
+      xhttp.send();
+
+
+}
+
+function downloadPDF(){
+document.filterForm.action="header.php";
+alert(document.filterForm.action);
+  return true;
+}
+
+</script>
+
+<!--<?php include('footer.php'); ?> -->

@@ -1,0 +1,163 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.dropdown-list {
+  width: 150px;
+  height: 30px;
+  margin: 30px;
+  background-color: lightgreen;
+  font-size: 15px;
+  padding: 2px;
+}
+
+.dropdown-items {
+  width: 150px;
+  height: 30px;
+  margin: 30px;
+  background-color: white;
+  font-size: 15px;
+  padding: 2px;
+}
+
+.examsetbox {
+  background-color: black;
+  height: 100px;
+  width: 100%;
+  border: 1px solid white;
+  margin-top: 10px;
+  color: white;
+}
+
+.tryitButton {
+  width: 150px;
+  height: 30px;
+  margin: 30px;
+  background-color: #f89a78;
+  font-size: 15px;
+  padding: 2px;
+  z-index: 0;
+  opacity: 1;
+  border: none;
+}
+
+.tryitButton:hover {
+  width: 150px;
+}
+
+.starttestButton {
+  width: 150px;
+  height: 30px;
+  margin: 30px;
+  background-color: #f89a78;
+  font-size: 15px;
+  padding: 2px;
+  z-index: 0;
+  opacity: 1;
+  border: none;
+}
+
+.starttestButton:hover {
+  width: 150px;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: black;
+}
+
+.logo {
+  color: #23c923;
+  font-weight: bold;
+  font-family: Impact, fantasy;
+  font-size: 50px;
+  padding: 15px;
+  padding-top: 20px;
+}
+
+.footer {
+  width: 100%;
+  height: 200px;
+  background-color: black;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.footer .b {
+  color: #23c923;
+}
+
+.quotebox {
+  height: 300px;
+  width: 100%;
+  background-color: black;
+  margin-top: 10px;
+  color: yellow;
+}
+
+.container {
+  height: 400px;
+  width: 100%;
+  background-color: black;
+  margin-top: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 420px 420px 420px;
+      grid-template-columns: 420px 420px 420px;
+}
+
+.container > div {
+  grid-gap: 10px;
+  margin: 10px;
+  background-color: #b2f0b2;
+  overflow: hidden;
+}
+
+.boxtitle {
+  height: 70px;
+  width: 99%;
+  background-color: #23c923;
+  border: 2px solid #013101;
+  text-align: center;
+  font-size: 25px;
+  font-weight: Bold;
+  color: white;
+  font-family: Impact, fantasy;
+}
+
+input[type=text] {
+  margin-top: 50px;
+}
+
+input[type=text], [type=password] {
+  display: inline-block;
+  height: 30px;
+  width: 250px;
+  margin-left: 65px;
+}
+
+.loginformsubmitbt {
+  width: 250px;
+  height: 30px;
+  margin-left: 65px;
+  background-color: #f89a78;
+}
+
+.notification {
+  margin: 10px;
+  padding: 10px;
+  width: 93%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px dotted #f89a78;
+}
+
+.notification a {
+  text-decoration: none;
+  color: Black;
+}
+/*# sourceMappingURL=index.css.map */
