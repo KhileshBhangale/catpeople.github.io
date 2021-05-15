@@ -161,6 +161,18 @@ input[type=text],[type=password]{
   }
 }
  
+@media screen and (max-width: 600px) {
+
+    .container > div{
+        grid-gap: 10px;
+         margin: 10px;
+         background-color: red;
+         overflow: hidden;
+     }
+    
+    }
+  
+  
 
 
 
