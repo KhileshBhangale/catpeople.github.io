@@ -32,10 +32,10 @@
 
     </div>
   </div>
-  <div>
+  <div class="fixedheight">
   <div class="boxtitle">Daily Test</div>
   </div>
-  <div>
+  <div class="fixedheight">
   <div class="boxtitle">Notification</div>
   <marquee behavior="" direction="up" height="100%" scrollamount="5"onMouseOver="this.stop()" onMouseOut="this.start()"><ul style="list-style-type:none"><!--<?php 
   
@@ -45,7 +45,12 @@
     while($note = $notifications->fetch_assoc()) {
     
   ?>-->
-  <li class="notification"><a href="<?php echo $note['Link']?>"><?php echo $note['Note']?></li>
+ <!--<li class="notification"><a href="<?php echo $note['Link']?>"><?php echo $note['Note']?></li>-->
+  <li class="notification"><a href="">Exam timetable for the Common aptitude test is released</li>
+
+  <li class="notification"><a href="">you can join our paid courses on upcomming sluggers.com website</li>
+      <li class="notification"><a href="">this is the demo notification for CATPeaople website. there is no link attach to this notification</li>
+        <li class="notification"><a href="">for the previous year question paper click here</li>
    
 <!-- <?php }?>--></ul>
   </marquee>
@@ -63,7 +68,7 @@ The struggle you're in today is developing the strength you need for Tomorrow
 	<select id="year" name="year" class="dropdown-list">
 
   <!--  <?php while($year = $Distinctyears->fetch_assoc()) { ?>-->
-   <option value="<!--<?php echo $year['year'] ?>-->2010" class="dropdown-items"><!--<?php echo $year['year'] ?>-->2010</option>
+   <option value="2010" class="dropdown-items"><!--<?php echo $year['year'] ?>-->2010</option>
 	 <!-- <?php } ?>-->
 	</select>
 
@@ -153,7 +158,7 @@ function getTest() {
         
        document.getElementById("num").innerHTML = this.responseText;
        x = this.responceText;
-       document.getElementById("examsetbox").style.height = "230px";
+       document.getElementById("examsetbox").className = "examsetboxaftertryit";
        
    
       }

@@ -30,6 +30,15 @@ body {
   color: white;
 }
 
+.examsetboxaftertryit {
+  background-color: black;
+  height: 240px;
+  width: 100%;
+  border: 1px solid white;
+  margin-top: 10px;
+  color: white;
+}
+
 .tryitButton {
   width: 150px;
   height: 30px;
@@ -193,6 +202,53 @@ input[type=text], [type=password] {
     margin: 1%;
     background-color: #b2f0b2;
     overflow: hidden;
+  }
+  .fixedheight {
+    height: 300px;
+  }
+  .examsetbox {
+    background-color: black;
+    height: auto;
+    width: 100%;
+    border: 1px solid white;
+    margin-top: 5px;
+    color: white;
+  }
+  .examsetboxaftertryit {
+    background-color: black;
+    height: 500px;
+    width: 100%;
+    border: 1px solid white;
+    margin-top: 10px;
+    color: white;
+  }
+  .tryitButton {
+    width: 150px;
+    height: 30px;
+    margin: 10px;
+    background-color: #f89a78;
+    font-size: 15px;
+    padding: 2px;
+    z-index: 0;
+    opacity: 1;
+    border: none;
+  }
+  .tryitButton:hover {
+    width: 150px;
+  }
+  .starttestButton {
+    width: 150px;
+    height: 30px;
+    margin: 30px;
+    background-color: #f89a78;
+    font-size: 15px;
+    padding: 2px;
+    z-index: 0;
+    opacity: 1;
+    border: none;
+  }
+  .starttestButton:hover {
+    width: 150px;
   }
 }
 /*# sourceMappingURL=index.css.map */
